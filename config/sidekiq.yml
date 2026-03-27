@@ -1,0 +1,11 @@
+:concurrency: 5
+:queues:
+  - default
+:scheduler:
+  :schedule:
+    # Definimos el nombre de nuestra entrada en el calendario (puede ser cualquier nombre)
+    sync_empire_flippers_deals:
+      # Expresión Cron cronológica: '0 0 * * *' significa: ejecutar al minuto 0, hora 0 (medianoche) todos los días.
+      cron: '0 0 * * *'
+      # La clase de Ruby (el Job) que se instanciará y ejecutará cuando el cron despierte.
+      class: SyncEmpireFlippersDealsJob
